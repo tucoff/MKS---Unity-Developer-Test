@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - CannonBall
+  - EnemyCannonBall
   layers:
   - Default
   - TransparentFX
