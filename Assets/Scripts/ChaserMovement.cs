@@ -13,9 +13,11 @@ public class ChaserMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Movement();
-        Rotation();
-
+        if(GameObject.FindGameObjectWithTag("Player"))
+        {    
+            Movement();
+            Rotation();
+        }
     }
 
     void Movement()
@@ -37,7 +39,6 @@ public class ChaserMovement : MonoBehaviour
     {
         if(col.gameObject.tag == "Player")
         {
-            //Explode
             GameObject.Instantiate(ExplosionGIF, transform.position, transform.rotation, transform.parent);
             col.gameObject.GetComponent<BoatLifeContoller>().Damage(2);            
             this.gameObject.GetComponent<BoatLifeContoller>().Damage(3);

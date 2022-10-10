@@ -15,11 +15,14 @@ public class ShooterMovement : MonoBehaviour
     private float angle;
     bool canShoot = true;
 
-    void Update()
+    void FixedUpdate()
     {
-        Rotation();
-        Movement();
-        FrontalShot();
+        if(GameObject.FindGameObjectWithTag("Player"))
+        {    
+            Rotation();
+            Movement();
+            FrontalShot();
+        }
     }
 
     void Movement()
@@ -33,6 +36,7 @@ public class ShooterMovement : MonoBehaviour
 
     void Rotation()
     {
+    
         targetPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         thisPos = transform.position;
         auxPos.x = targetPos.x - thisPos.x;
