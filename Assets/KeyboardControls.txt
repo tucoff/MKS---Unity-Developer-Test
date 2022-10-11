@@ -1,0 +1,9 @@
+Movement:
+WAS or Arrows
+
+Frontal Shot:
+Space
+
+Side Shots:
+Q and E
+
