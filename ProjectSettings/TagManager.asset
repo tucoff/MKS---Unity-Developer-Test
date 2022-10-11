@@ -10,6 +10,7 @@ TagManager:
   - Canvas
   - Score
   - Timer
+  - DeathMenu
   layers:
   - Default
   - TransparentFX

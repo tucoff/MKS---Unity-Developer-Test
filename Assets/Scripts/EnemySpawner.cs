@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine("TimerToSpawn");
+        timeBeetweenSpawn = PlayerPrefs.GetFloat("SpawnTime");
     }
 
     void Spawn()
@@ -28,6 +29,6 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator TimerToSpawn()
     {
         yield return new WaitForSeconds(timeBeetweenSpawn);
-        Spawn();
+        if(GameObject.FindGameObjectWithTag("Player") && GameObject.FindGameObjectWithTag("GameController").GetComponent<CanvasController>().TimeLeft > 0){ Spawn(); }
     }
 }

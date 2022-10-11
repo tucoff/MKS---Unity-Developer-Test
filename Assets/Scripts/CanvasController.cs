@@ -6,12 +6,12 @@ using TMPro;
 public class CanvasController : MonoBehaviour
 {
     public float TimeLeft;
-    public bool TimerOn = false;
+    bool TimerOn = false;
    
     void Start()
     {
         TimerOn = true;
-        //TimeLeft = PlayerPrefs.GetFloat("Time");
+        TimeLeft = PlayerPrefs.GetFloat("Time");
     }
 
     void FixedUpdate()
@@ -34,6 +34,7 @@ public class CanvasController : MonoBehaviour
             }
             else
             {
+                GameObject.FindGameObjectWithTag("DeathMenu").transform.GetChild(0).gameObject.SetActive(true);
                 TimeLeft = 0;
                 TimerOn = false;
             }
